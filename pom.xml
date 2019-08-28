@@ -122,7 +122,7 @@
         <module>presto-benchmark-driver</module>
         <module>presto-server</module>
         <module>presto-server-rpm</module>
-        <module>presto-docs</module>
+<!--        <module>presto-docs</module>-->
         <module>presto-verifier</module>
         <module>presto-testing-server-launcher</module>
         <module>presto-plugin-toolkit</module>
@@ -138,6 +138,7 @@
         <module>presto-proxy</module>
         <module>presto-kudu</module>
         <module>presto-elasticsearch</module>
+        <module>presto-druid</module>
     </modules>
 
     <dependencyManagement>
@@ -293,6 +294,11 @@
             <dependency>
                 <groupId>com.facebook.presto</groupId>
                 <artifactId>presto-mysql</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.facebook.presto</groupId>
+                <artifactId>presto-druid</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
