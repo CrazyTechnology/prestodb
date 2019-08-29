@@ -139,6 +139,7 @@
         <module>presto-kudu</module>
         <module>presto-elasticsearch</module>
         <module>presto-druid</module>
+        <module>presto-wiki</module>
     </modules>
 
     <dependencyManagement>
