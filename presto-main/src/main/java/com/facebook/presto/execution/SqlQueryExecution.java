@@ -212,7 +212,7 @@ public class SqlQueryExecution
                 stateMachine.transitionToFailed(e);
                 throw e;
             }
-
+            //设置状态
             stateMachine.setUpdateType(analysis.getUpdateType());
 
             // when the query finishes cache the final query info, and clear the reference to the output stage

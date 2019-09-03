@@ -58,7 +58,7 @@ public class DriverConnectionFactory
             throws SQLException
     {
         Connection connection = driver.connect(connectionUrl, connectionProperties);
-        checkState(connection != null, "Driver returned null connection");
+        checkState(connection != null, "Driver returned null connection"+driver);
         return connection;
     }
 }

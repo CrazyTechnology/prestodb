@@ -140,6 +140,7 @@
         <module>presto-elasticsearch</module>
         <module>presto-druid</module>
         <module>presto-wiki</module>
+        <module>presto-clickhouse</module>
     </modules>
 
     <dependencyManagement>
@@ -300,6 +301,11 @@
             <dependency>
                 <groupId>com.facebook.presto</groupId>
                 <artifactId>presto-druid</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.facebook.presto</groupId>
+                <artifactId>presto-clickhouse</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
