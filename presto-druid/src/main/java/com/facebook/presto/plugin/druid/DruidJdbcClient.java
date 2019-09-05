@@ -63,7 +63,7 @@ public class DruidJdbcClient extends BaseJdbcClient {
             throws SQLException {
         DatabaseMetaData metadata = connection.getMetaData();
         // For druid - catalog is empty.
-        return metadata.getTables("druid",
+        return metadata.getTables(connection.getCatalog(),
                 schemaName.orElse(null),
                 tableName.orElse(null),
                 null);
