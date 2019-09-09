@@ -43,12 +43,6 @@ public class DruidJdbcClient extends BaseJdbcClient {
                 connectionProperties);
     }
 
-//    @Override
-//    public void abortReadConnection(Connection connection)
-//            throws SQLException
-//    {
-//        connection.abort(directExecutor());
-//    }
 
     @Override
     public PreparedStatement getPreparedStatement(Connection connection, String sql)
@@ -107,7 +101,7 @@ public class DruidJdbcClient extends BaseJdbcClient {
                     tableHandles.add(new JdbcTableHandle(
                             connectorId,
                             schemaTableName,
-                            "druid",
+                            null,
                             resultSet.getString("TABLE_SCHEM"),
                             resultSet.getString("TABLE_NAME")));
                 }
@@ -182,19 +176,7 @@ public class DruidJdbcClient extends BaseJdbcClient {
     }
 
 
-//    public PreparedStatement buildSql(ConnectorSession session, Connection connection, JdbcSplit split, JdbcTableHandle table, List<JdbcColumnHandle> columns)
-//            throws SQLException {
-//        return new DruidQueryBuilder(identifierQuote)
-//                .buildSql(this,
-//                        session,
-//                        connection,
-//                        table.getCatalogName(),
-//                        table.getSchemaName(),
-//                        table.getTableName(),
-//                        columns,
-//                        table.getConstraint(),
-//                        split.getAdditionalPredicate());
-//    }
+
 @Override
 public PreparedStatement buildSql(Connection connection, JdbcSplit split, List<JdbcColumnHandle> columnHandles)
         throws SQLException

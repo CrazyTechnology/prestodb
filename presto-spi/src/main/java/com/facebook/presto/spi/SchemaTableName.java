@@ -30,7 +30,13 @@ public class SchemaTableName
     public SchemaTableName(@JsonProperty("schema") String schemaName, @JsonProperty("table") String tableName)
     {
         this.schemaName = checkNotEmpty(schemaName, "schemaName").toLowerCase(ENGLISH);
-        this.tableName = checkNotEmpty(tableName, "tableName").toLowerCase(ENGLISH);
+        if("druid".equals(schemaName)){
+            //处理druid的表名大小问题
+            this.tableName = checkNotEmpty(tableName, "tableName");
+        }else{
+            this.tableName = checkNotEmpty(tableName, "tableName").toLowerCase(ENGLISH);
+        }
+
     }
 
     @JsonProperty("schema")
